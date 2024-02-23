@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- title -->
+    <title>Todo App</title>
+    <!-- favicon -->
+    <link
+      rel="shortcut icon"
+      href="./images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- style -->
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <main data-theme="dark">
+      <div class="Container">
+        <section class="todoSec">
+          <header>
+            <h1 class="mainTitle">TODO</h1>
+            <img src="./images/icon-sun.svg" alt="sun icon" />
+          </header>
+          <div class="createTodo">
+            <div class="circle add"></div>
+            <div class="circle update"></div>
+            <input type="text" placeholder="Create a new todo.." />
+          </div>
+          <div class="todosContainer">
+            <div class="todosList">
+              <ul></ul>
+            </div>
+            <div class="todosInfo">
+              <div class="num">
+                <span class="todoNum"></span>
+              </div>
+              <div class="filterBtns">
+                <button data-type="all">All</button>
+                <button data-type="active">Active</button>
+                <button data-type="completed">Completed</button>
+              </div>
+              <div class="clear">
+                <button class="clearBtn">Clear Completed</button>
+              </div>
+            </div>
+          </div>
+          <p class="dragTxt">Drag and drop to reorder list</p>
+        </section>
+      </div>
+    </main>
+    <!-- js -->
+    <script src="./js/main.js" type="module"></script>
+  </body>
+</html>

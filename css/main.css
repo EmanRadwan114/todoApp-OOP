@@ -1,0 +1,270 @@
+/* *start of general styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 18px;
+}
+
+:root,
+button {
+  font-family: "Josefin Sans", sans-serif;
+}
+/* *end of general styles */
+
+/* *start of common styles */
+button {
+  background-color: transparent;
+  border: none;
+}
+
+main,
+.todoSec header,
+.createTodo,
+.todosList li,
+.todosInfo,
+.circle,
+.todosList li .control {
+  display: flex;
+  align-items: center;
+}
+
+.createTodo,
+header {
+  margin-bottom: 1.5rem;
+}
+
+.createTodo,
+.todosList li,
+.todosInfo {
+  column-gap: 1rem;
+}
+
+header img,
+.circle,
+.todosList li p,
+button,
+.todosList li .control .edit,
+.todosList li .control .crossIcon {
+  cursor: pointer;
+}
+
+input[type="text"],
+.todosList li p {
+  color: var(--txtClr);
+}
+
+input[type="text"]::placeholder,
+.dragTxt,
+.todosInfo,
+button {
+  color: var(--footerClr);
+}
+
+.createTodo,
+.todosInfo,
+.todosList {
+  background-color: var(--listBg);
+  border-radius: 5px;
+}
+
+.todosInfo,
+.todosInfo button {
+  font-size: 16px;
+}
+
+.todosList li,
+.todoNum {
+  text-transform: capitalize;
+}
+
+main[data-theme="dark"] .todosContainer,
+main[data-theme="dark"] .createTodo {
+  box-shadow: 0 10px 20px 12px rgba(0, 0, 0, 0.25);
+}
+main[data-theme="light"] .todosContainer,
+main[data-theme="light"] .createTodo {
+  box-shadow: 0 10px 20px 12px rgba(0, 0, 0, 0.05);
+}
+/* *end of common styles */
+
+/* *start of main sec */
+main {
+  background-size: 100% 40%;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+main[data-theme="dark"] {
+  --mainBg: hsl(235, 21%, 11%);
+  --listBg: hsl(235, 24%, 19%);
+  --txtClr: hsl(234, 39%, 85%);
+  --hoverClr: hsl(236, 33%, 92%);
+  --footerClr: hsl(234, 11%, 52%);
+  --circle: hsl(237, 14%, 26%);
+  background-image: url(../images/bg-desktop-dark.jpg);
+  background-color: var(--mainBg);
+}
+
+main[data-theme="light"] {
+  background-image: url(../images/bg-desktop-light.jpg);
+  --listBg: hsl(0, 0%, 98%);
+  --mainBg: hsl(236, 33%, 92%);
+  --txtClr: hsl(236, 9%, 61%);
+  --hoverClr: hsl(233, 11%, 84%);
+  --footerClr: hsl(235, 19%, 35%);
+  --circle: hsl(237, 14%, 26%);
+
+  background-color: var(--mainBg);
+}
+
+.Container {
+  width: 40%;
+  margin: auto;
+}
+
+header {
+  justify-content: space-between;
+  color: white;
+}
+
+header img {
+  padding: 0.85rem;
+}
+
+.mainTitle {
+  font-size: calc(1.8rem + 0.5vw);
+  letter-spacing: 15px;
+  font-weight: 700;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.circle {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid var(--circle);
+  justify-content: center;
+}
+
+.createTodo {
+  padding: 1.1rem;
+}
+
+.todosContainer {
+  margin-bottom: 2rem;
+}
+
+input[type="text"] {
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  width: 100%;
+}
+input[type="text"]:focus-visible {
+  outline: none;
+}
+
+.todosList li {
+  border-bottom: 1px solid var(--circle);
+}
+.todosList li .control {
+  margin-left: auto;
+  column-gap: 20px;
+}
+
+.todosList li .checkIcon,
+.update {
+  display: none;
+}
+
+.todosList li .edit,
+.todosList li .crossIcon {
+  padding: 3px;
+}
+.todosList li .edit {
+  color: rgb(58, 123, 253);
+}
+.todosList li .crossIcon {
+  transition: backgroundColor 500ms;
+}
+.todosList li .crossIcon:hover {
+  background-color: var(--hoverClr);
+}
+
+.todosInfo,
+.todosList li {
+  padding: 1.1rem 1.1rem;
+}
+.todosInfo {
+  justify-content: space-between;
+}
+
+.dragTxt {
+  text-align: center;
+  font-size: 15px;
+}
+
+.filterBtns button {
+  margin: 0 0.25rem;
+}
+/* *end of main sec */
+
+/* *start of media query */
+
+@media screen and (max-width: 1200px) {
+  .Container {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .Container {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Container {
+    width: 90%;
+  }
+
+  .todosInfo {
+    flex-wrap: wrap;
+    row-gap: 2rem;
+    background-color: transparent;
+    padding: 0;
+    column-gap: 0;
+    align-items: stretch;
+  }
+
+  .filterBtns {
+    order: 3;
+    text-align: center;
+    width: 100%;
+  }
+
+  .num,
+  .clear,
+  .filterBtns {
+    background-color: var(--listBg);
+    padding: 1rem 1rem;
+  }
+
+  .num,
+  .clear {
+    width: calc(100% / 2);
+  }
+  .clear {
+    text-align: end;
+  }
+}
+
+/* *end of media query */
