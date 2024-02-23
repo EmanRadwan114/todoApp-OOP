@@ -18,8 +18,8 @@ Users should be able to:
 
 ### Links
 
-- [Solution Link](https://your-solution-url.com)
-- [Live Demo Link](https://your-live-site-url.com)
+- [Solution Link](https://www.frontendmentor.io/solutions/simple-todo-app-with-js-oop-5xH94icPLr)
+- [Live Demo Link](https://emanradwan114.github.io/todoApp-OOP/)
 
 ### Built with
 
