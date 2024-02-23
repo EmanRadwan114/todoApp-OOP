@@ -8,6 +8,7 @@ steps:
    6. filter tasks
    7. display the number of completed & active tasks
    8. clear completed tasks
+   9. delete task
 */
 
 import Task from "./task.js";
@@ -96,6 +97,16 @@ list.addEventListener("click", (e) => {
       createdTask.activateTask(e.target.parentElement, index, tasksContainer);
     }
   }
+
+  //*step 9
+  if (e.target.classList.contains("crossIcon")) {
+    tasksContainer = createdTask.deleteTask(
+      tasksContainer,
+      e.target.getAttribute("data-id"),
+      list
+    );
+    todoNum.textContent = `${list.children.length} items left`;
+  }
 });
 
 function styleBtn() {
@@ -140,8 +151,10 @@ filterBtns.forEach((btn) => {
         todoNum.textContent = `${list.children.length} items left`;
       }
       if (
-        e.target.getAttribute("data-type") == "completed" &&
-        list.children.length == 0
+        (e.target.getAttribute("data-type") == "completed" &&
+          list.children.length == 0) ||
+        (e.target.getAttribute("data-type") == "active" &&
+          list.children.length == 0)
       ) {
         todoNum.textContent = `0 items left`;
       }

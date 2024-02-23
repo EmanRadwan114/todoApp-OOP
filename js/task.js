@@ -94,4 +94,21 @@ export default class Task {
     });
     return arr;
   }
+
+  deleteTask(arr, id, list) {
+    arr = arr.filter((item) => {
+      return item.id != id;
+    });
+    localStorage.setItem("tasks", JSON.stringify(arr));
+    console.log(arr);
+    list.textContent = ``;
+    arr.forEach((item, indx) => {
+      const li = this.displayTasks(list, item.content, item.id);
+      if (item.status == "completed") {
+        this.completeTask(li, indx, arr);
+      }
+      console.log(item);
+    });
+    return arr;
+  }
 }
