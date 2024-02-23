@@ -40,3 +40,4 @@ Users should be able to:
   6.  filter tasks
   7.  display the number of completed & active tasks
   8.  clear completed tasks
+  9.  delete task
